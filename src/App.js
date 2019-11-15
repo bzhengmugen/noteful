@@ -6,7 +6,6 @@ import NoteListMain from './NoteListMain';
 import {getNotesForFolder, findNote, findFolder} from './notes-helpers';
 import NoteItem from './NoteItem'
 import NoteFolder from './NoteFolder';
-import Note from './Note'
 class App extends Component {
   state = {
     notes: [],
@@ -33,7 +32,7 @@ class App extends Component {
           </Route>
           <Route
             path='/folder/:folderId'
-            component={(props) => {
+            render={(props) => {
               const {folderId} = props.match.params;
               const folder = getNotesForFolder(notes, folderId);
               return <NoteFolder {...props} notes={folder}/>

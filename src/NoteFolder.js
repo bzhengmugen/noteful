@@ -3,7 +3,7 @@ import Note from './Note'
 export default function NoteFolder(props){
     return(
         <div className='NoteFolder'>
-            <button onClick={() => this.props.history.goBack()}>back</button>
+            <button onClick={() => props.history.goBack()}>back</button>
             <ul>
             {props.notes.map(note =>
             <li key={note.id}>
